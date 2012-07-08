@@ -9,5 +9,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 @interface DesignSlideshowScreensaverView : ScreenSaverView
-
+{
+    NSImage *placeholder;
+}
 @end

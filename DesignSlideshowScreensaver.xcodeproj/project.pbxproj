@@ -11,6 +11,7 @@
 		83A7420E15A9E28F00EB7074 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A7420D15A9E28F00EB7074 /* ScreenSaver.framework */; };
 		83A7421815A9E28F00EB7074 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83A7421615A9E28F00EB7074 /* InfoPlist.strings */; };
 		83A7421C15A9E28F00EB7074 /* DesignSlideshowScreensaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7421B15A9E28F00EB7074 /* DesignSlideshowScreensaverView.m */; };
+		83A7422615A9F93900EB7074 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83A7422515A9F93900EB7074 /* placeholder.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +21,12 @@
 		83A7421015A9E28F00EB7074 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83A7421115A9E28F00EB7074 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83A7421215A9E28F00EB7074 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		83A7421515A9E28F00EB7074 /* DesignSlideshowScreensaver-Info.plist */ = {isa = PBXFileReference; path = "DesignSlideshowScreensaver-Info.plist"; sourceTree = "<group>"; };
+		83A7421515A9E28F00EB7074 /* DesignSlideshowScreensaver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesignSlideshowScreensaver-Info.plist"; sourceTree = "<group>"; };
 		83A7421715A9E28F00EB7074 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		83A7421915A9E28F00EB7074 /* DesignSlideshowScreensaver-Prefix.pch */ = {isa = PBXFileReference; path = "DesignSlideshowScreensaver-Prefix.pch"; sourceTree = "<group>"; };
-		83A7421A15A9E28F00EB7074 /* DesignSlideshowScreensaverView.h */ = {isa = PBXFileReference; path = DesignSlideshowScreensaverView.h; sourceTree = "<group>"; };
+		83A7421915A9E28F00EB7074 /* DesignSlideshowScreensaver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignSlideshowScreensaver-Prefix.pch"; sourceTree = "<group>"; };
+		83A7421A15A9E28F00EB7074 /* DesignSlideshowScreensaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSlideshowScreensaverView.h; sourceTree = "<group>"; };
 		83A7421B15A9E28F00EB7074 /* DesignSlideshowScreensaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignSlideshowScreensaverView.m; sourceTree = "<group>"; };
+		83A7422515A9F93900EB7074 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				83A7421515A9E28F00EB7074 /* DesignSlideshowScreensaver-Info.plist */,
 				83A7421615A9E28F00EB7074 /* InfoPlist.strings */,
+				83A7422515A9F93900EB7074 /* placeholder.jpg */,
 				83A7421915A9E28F00EB7074 /* DesignSlideshowScreensaver-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A7421815A9E28F00EB7074 /* InfoPlist.strings in Resources */,
+				83A7422615A9F93900EB7074 /* placeholder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +283,7 @@
 				83A7421E15A9E28F00EB7074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		83A7421F15A9E28F00EB7074 /* Build configuration list for PBXNativeTarget "DesignSlideshowScreensaver" */ = {
 			isa = XCConfigurationList;
@@ -288,6 +292,7 @@
 				83A7422115A9E28F00EB7074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
