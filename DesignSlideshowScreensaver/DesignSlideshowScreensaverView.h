@@ -10,6 +10,15 @@
 
 @interface DesignSlideshowScreensaverView : ScreenSaverView
 {
+    double framesPerSecond;
+    double blankSeconds;
+    double secondsPerDesign;
+    NSInteger interval;
+    double seconds;
+    NSInteger fadeInSeconds;
+    NSInteger state;
+    NSInteger tick;
+    double alpha;
     NSImage *placeholder;
 }
 @end
