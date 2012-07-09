@@ -23,7 +23,7 @@
     blankSeconds = 1.0;
     tick = 0;
     alpha = 0;
-    state = 0;
+    state = FadingIn;
     imageIndex = 0;
     images = [[[NSMutableArray alloc] init] retain];
     
@@ -60,59 +60,34 @@
 - (void)drawRect:(NSRect)rect
 {    
     NSLog(@"seconds=%f, alpha=%f, state=%li", seconds, alpha, state);
-    if (state == 0) {
-        // fading in:
+    if (state == FadingIn) {
         alpha = MIN(seconds / fadeInSeconds, 1.0);
-        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
     }
-    else if (state == 1) {
+    else if (state == Normal) {
         alpha = 1.0;
-        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
     }
-    else if (state == 2) {
-        // fading out:
+    else if (state == FadingOut) {
         alpha = MAX(1.0 - (seconds / fadeInSeconds), 0);
-        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
     }
     [[images objectAtIndex:imageIndex] drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
-    /*
-    else {
-        // blank
-        alpha = MIN(seconds / blankSeconds, 1.0);
-        [[NSColor blackColor] setFill];
-        NSRectFillUsingOperation(rect, NSCompositeSourceOver);
-    } */
 }
 
 - (void)animateOneFrame
 {
-    /*NSLog(@"animate frame...");
-    NSImage *placeholder = [[NSImage alloc] initWithContentsOfFile:@"636x460design_01.jpg"];
-    [placeholder drawInRect:[self bounds] fromRect:NSZeroRect operation:NSCompositeDestinationOver fraction:1.0];
-     */
-    
-    // states:
-    //  0 - fade in
-    //  1 - normal
-    //  2 - fading out
-    //  3 - blank
-        
     if (state == 0 && seconds > fadeInSeconds) {
         tick = 0;
-        state += 1;
+        state = Normal;
     }
     else if (state == 1 && seconds > secondsPerDesign) {
         tick = 0;
-        state += 1;
+        state = FadingOut;
     }
     else if (state == 2 && seconds > fadeInSeconds) {
         tick = 0;
-        state = 0;
+        state = FadingIn;
         imageIndex = (imageIndex + 1) % images.count;
     }
-    
     seconds = tick / framesPerSecond;
-    
     tick += 1;
     [self setNeedsDisplay:YES];
     return;

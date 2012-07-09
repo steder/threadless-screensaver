@@ -8,6 +8,12 @@
 
 #import <ScreenSaver/ScreenSaver.h>
 
+typedef enum {
+    FadingIn,
+    Normal,
+    FadingOut,
+} ScreenSaverStateType;
+
 @interface DesignSlideshowScreensaverView : ScreenSaverView
 {
     double framesPerSecond;
