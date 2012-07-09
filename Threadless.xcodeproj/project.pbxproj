@@ -15,15 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83A7420815A9E28F00EB7074 /* DesignSlideshowScreensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSlideshowScreensaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A7420815A9E28F00EB7074 /* Threadless.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Threadless.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A7420B15A9E28F00EB7074 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83A7420D15A9E28F00EB7074 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
 		83A7421015A9E28F00EB7074 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83A7421115A9E28F00EB7074 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83A7421215A9E28F00EB7074 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		83A7421515A9E28F00EB7074 /* DesignSlideshowScreensaver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesignSlideshowScreensaver-Info.plist"; sourceTree = "<group>"; };
+		83A7421515A9E28F00EB7074 /* Threadless-Info.plist */ = {isa = PBXFileReference; path = "Threadless-Info.plist"; sourceTree = "<group>"; };
 		83A7421715A9E28F00EB7074 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		83A7421915A9E28F00EB7074 /* DesignSlideshowScreensaver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignSlideshowScreensaver-Prefix.pch"; sourceTree = "<group>"; };
+		83A7421915A9E28F00EB7074 /* Threadless-Prefix.pch */ = {isa = PBXFileReference; path = "Threadless-Prefix.pch"; sourceTree = "<group>"; };
 		83A7421A15A9E28F00EB7074 /* DesignSlideshowScreensaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSlideshowScreensaverView.h; sourceTree = "<group>"; };
 		83A7421B15A9E28F00EB7074 /* DesignSlideshowScreensaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignSlideshowScreensaverView.m; sourceTree = "<group>"; };
 		83A7422515A9F93900EB7074 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		83A7420915A9E28F00EB7074 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83A7420815A9E28F00EB7074 /* DesignSlideshowScreensaver.saver */,
+				83A7420815A9E28F00EB7074 /* Threadless.saver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,10 +92,10 @@
 		83A7421415A9E28F00EB7074 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				83A7421515A9E28F00EB7074 /* DesignSlideshowScreensaver-Info.plist */,
+				83A7421515A9E28F00EB7074 /* Threadless-Info.plist */,
 				83A7421615A9E28F00EB7074 /* InfoPlist.strings */,
 				83A7422515A9F93900EB7074 /* placeholder.jpg */,
-				83A7421915A9E28F00EB7074 /* DesignSlideshowScreensaver-Prefix.pch */,
+				83A7421915A9E28F00EB7074 /* Threadless-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -113,9 +113,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		83A7420715A9E28F00EB7074 /* DesignSlideshowScreensaver */ = {
+		83A7420715A9E28F00EB7074 /* Threadless */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83A7421F15A9E28F00EB7074 /* Build configuration list for PBXNativeTarget "DesignSlideshowScreensaver" */;
+			buildConfigurationList = 83A7421F15A9E28F00EB7074 /* Build configuration list for PBXNativeTarget "Threadless" */;
 			buildPhases = (
 				83A7420215A9E28F00EB7074 /* Sources */,
 				83A7420315A9E28F00EB7074 /* Frameworks */,
@@ -127,9 +127,9 @@
 			);
 			dependencies = (
 			);
-			name = DesignSlideshowScreensaver;
+			name = Threadless;
 			productName = DesignSlideshowScreensaver;
-			productReference = 83A7420815A9E28F00EB7074 /* DesignSlideshowScreensaver.saver */;
+			productReference = 83A7420815A9E28F00EB7074 /* Threadless.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +140,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 83A7420015A9E28F00EB7074 /* Build configuration list for PBXProject "DesignSlideshowScreensaver" */;
+			buildConfigurationList = 83A7420015A9E28F00EB7074 /* Build configuration list for PBXProject "Threadless" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -152,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83A7420715A9E28F00EB7074 /* DesignSlideshowScreensaver */,
+				83A7420715A9E28F00EB7074 /* Threadless */,
 			);
 		};
 /* End PBXProject section */
@@ -253,10 +253,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DesignSlideshowScreensaver/DesignSlideshowScreensaver-Prefix.pch";
-				INFOPLIST_FILE = "DesignSlideshowScreensaver/DesignSlideshowScreensaver-Info.plist";
+				GCC_PREFIX_HEADER = "DesignSlideshowScreensaver/Threadless-Prefix.pch";
+				INFOPLIST_FILE = "DesignSlideshowScreensaver/Threadless-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Threadless;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -265,10 +265,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DesignSlideshowScreensaver/DesignSlideshowScreensaver-Prefix.pch";
-				INFOPLIST_FILE = "DesignSlideshowScreensaver/DesignSlideshowScreensaver-Info.plist";
+				GCC_PREFIX_HEADER = "DesignSlideshowScreensaver/Threadless-Prefix.pch";
+				INFOPLIST_FILE = "DesignSlideshowScreensaver/Threadless-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Threadless;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
@@ -276,7 +276,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83A7420015A9E28F00EB7074 /* Build configuration list for PBXProject "DesignSlideshowScreensaver" */ = {
+		83A7420015A9E28F00EB7074 /* Build configuration list for PBXProject "Threadless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83A7421D15A9E28F00EB7074 /* Debug */,
@@ -285,7 +285,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		83A7421F15A9E28F00EB7074 /* Build configuration list for PBXNativeTarget "DesignSlideshowScreensaver" */ = {
+		83A7421F15A9E28F00EB7074 /* Build configuration list for PBXNativeTarget "Threadless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83A7422015A9E28F00EB7074 /* Debug */,
