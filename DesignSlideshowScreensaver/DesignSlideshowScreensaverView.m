@@ -24,25 +24,24 @@
     tick = 0;
     alpha = 0;
     state = 0;
+    imageIndex = 0;
+    images = [[[NSMutableArray alloc] init] retain];
     
     if (self) {
         [self setAnimationTimeInterval:1/framesPerSecond];
         NSBundle* saverBundle = [NSBundle bundleForClass:
                                  [self class]];
         NSLog(@"SCREENSAVER resourcePath: %@", [saverBundle resourcePath]);
-
         NSString* imagePath = [saverBundle pathForResource:@"placeholder.jpg"
-                                                    ofType: nil];
-
+                                                    ofType: nil];        
         NSLog(@"SCREENSAVER imagePath: %@", imagePath);
-
         placeholder = [[NSImage alloc]
-         initWithContentsOfURL:[NSURL URLWithString:@"http://media.threadless.com/imgs/products/0/636x460design_01.jpg"]];
-        if (placeholder == nil) {
-            placeholder = [[NSImage alloc]
                            initWithContentsOfFile:imagePath];
-        }
-            
+        [images addObject:[[NSImage alloc]
+                           initWithContentsOfURL:[NSURL URLWithString:@"http://media.threadless.com/imgs/products/1001/636x460design_01.jpg"]]];
+        [images addObject:[[NSImage alloc]
+                           initWithContentsOfURL:[NSURL URLWithString:@"http://media.threadless.com/imgs/products/1000/636x460design_01.jpg"]]];
+
         NSLog(@"Placeholder: %@", placeholder);  
     }
     return self;
@@ -64,23 +63,25 @@
     if (state == 0) {
         // fading in:
         alpha = MIN(seconds / fadeInSeconds, 1.0);
-        [placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
+        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
     }
     else if (state == 1) {
         alpha = 1.0;
-        [placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
+        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
     }
     else if (state == 2) {
         // fading out:
         alpha = MAX(1.0 - (seconds / fadeInSeconds), 0);
-        [placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
+        //[placeholder drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];        
     }
+    [[images objectAtIndex:imageIndex] drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
+    /*
     else {
         // blank
         alpha = MIN(seconds / blankSeconds, 1.0);
         [[NSColor blackColor] setFill];
         NSRectFillUsingOperation(rect, NSCompositeSourceOver);
-    }
+    } */
 }
 
 - (void)animateOneFrame
@@ -107,13 +108,8 @@
     else if (state == 2 && seconds > fadeInSeconds) {
         tick = 0;
         state = 0;
+        imageIndex = (imageIndex + 1) % images.count;
     }
-/* 
-    else if (state == 3 && seconds > blankSeconds) {
-        tick = 0;
-        state = 0;
-    }
- */
     
     seconds = tick / framesPerSecond;
     

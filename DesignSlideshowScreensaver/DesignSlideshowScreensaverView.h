@@ -20,5 +20,7 @@
     NSInteger tick;
     double alpha;
     NSImage *placeholder;
+    NSInteger imageIndex;
+    NSMutableArray *images;
 }
 @end
