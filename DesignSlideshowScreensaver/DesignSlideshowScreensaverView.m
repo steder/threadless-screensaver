@@ -16,7 +16,6 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
 
-    interval = 1;
     fadeInSeconds = 1.0;
     framesPerSecond = 30.0;
     secondsPerDesign = 2.0;
@@ -26,6 +25,9 @@
     state = FadingIn;
     imageIndex = 0;
     images = [[[NSMutableArray alloc] init] retain];
+    placeholders = [[[NSMutableArray alloc] init] retain];
+    
+    NSArray *placeholder_names = [NSArray arrayWithObjects: @"1000.jpg", @"1001.jpg", @"1004.jpg", @"1005.jpg",                @"1010.jpg", @"1354.jpg", @"1362.jpg", @"2005.jpg", @"2011.jpg", @"3003.jpg", @"3005.jpg", @"3006.jpg", @"3007.jpg", @"3500.jpg", @"3501.jpg", nil];
     
     if (self) {
         [self setAnimationTimeInterval:1/framesPerSecond];
@@ -37,11 +39,23 @@
         NSLog(@"SCREENSAVER imagePath: %@", imagePath);
         placeholder = [[NSImage alloc]
                            initWithContentsOfFile:imagePath];
-        [images addObject:[[NSImage alloc]
+        /*
+         [images addObject:[[NSImage alloc]
                            initWithContentsOfURL:[NSURL URLWithString:@"http://media.threadless.com/imgs/products/1001/636x460design_01.jpg"]]];
         [images addObject:[[NSImage alloc]
                            initWithContentsOfURL:[NSURL URLWithString:@"http://media.threadless.com/imgs/products/1000/636x460design_01.jpg"]]];
-
+         */
+        
+        for (NSString *name in placeholder_names)
+        {
+            imagePath = [saverBundle pathForResource:name ofType: nil];
+            NSImage *image = [[[NSImage alloc] initWithContentsOfFile:imagePath] autorelease];
+            if (image != nil) {
+                NSLog(@"Loading image %@: %@", imagePath, image);
+                [placeholders addObject:image];
+            }
+        }
+        
         NSLog(@"Placeholder: %@", placeholder);  
     }
     return self;
@@ -69,23 +83,23 @@
     else if (state == FadingOut) {
         alpha = MAX(1.0 - (seconds / fadeInSeconds), 0);
     }
-    [[images objectAtIndex:imageIndex] drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
+    [[placeholders objectAtIndex:imageIndex] drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
 }
 
 - (void)animateOneFrame
 {
-    if (state == 0 && seconds > fadeInSeconds) {
+    if (state == FadingIn && seconds > fadeInSeconds) {
         tick = 0;
         state = Normal;
     }
-    else if (state == 1 && seconds > secondsPerDesign) {
+    else if (state == Normal && seconds > secondsPerDesign) {
         tick = 0;
         state = FadingOut;
     }
-    else if (state == 2 && seconds > fadeInSeconds) {
+    else if (state == FadingOut && seconds > fadeInSeconds) {
         tick = 0;
         state = FadingIn;
-        imageIndex = (imageIndex + 1) % images.count;
+        imageIndex = (imageIndex + 1) % placeholders.count;
     }
     seconds = tick / framesPerSecond;
     tick += 1;

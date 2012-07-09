@@ -19,13 +19,13 @@ typedef enum {
     double framesPerSecond;
     double blankSeconds;
     double secondsPerDesign;
-    NSInteger interval;
     double seconds;
     NSInteger fadeInSeconds;
     NSInteger state;
     NSInteger tick;
     double alpha;
     NSImage *placeholder;
+    NSMutableArray *placeholders;
     NSInteger imageIndex;
     NSMutableArray *images;
 }
